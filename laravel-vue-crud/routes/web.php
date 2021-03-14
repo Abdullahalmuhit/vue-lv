@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/items', function () {
+    return view('layout/app');
+});
+
 Route::get('{any}', function () {
     return view('app');
 })->where('any', '.*');
