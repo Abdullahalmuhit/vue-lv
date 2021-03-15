@@ -36,7 +36,6 @@
                     .post('http://localhost:8000/api/items', this.item)
                     .then(response => (
                         this.$router.push({ name: 'items' })
-
                     ))
                     .catch(err => console.log(err))
                     .finally(() => this.loading = false)
