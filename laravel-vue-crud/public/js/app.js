@@ -38197,7 +38197,7 @@ var render = function() {
                     {
                       staticClass: "btn btn-success",
                       attrs: {
-                        to: { name: "edit/items", params: { id: item.id } }
+                        to: { name: "edititems", params: { id: item.id } }
                       }
                     },
                     [_vm._v("Edit\n                    ")]
