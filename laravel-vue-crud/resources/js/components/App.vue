@@ -4,8 +4,9 @@
             <div class="collapse navbar-collapse">
                 <div class="navbar-nav">
                     <router-link to="/" class="nav-item nav-link">Products List</router-link>
-                    <router-link to="/create" class="nav-item nav-link">Create Product</router-link>
                     <router-link to="/items" class="nav-item nav-link">Items List</router-link>
+                    <!--<router-link to="/items/create" class="nav-item nav-link">Create Item</router-link>
+                    <router-link to="/create" class="nav-item nav-link">Create Product</router-link>-->
                 </div>
             </div>
         </nav>

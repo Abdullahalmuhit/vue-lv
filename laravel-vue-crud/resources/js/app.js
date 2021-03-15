@@ -12,6 +12,7 @@ import VueAxios from 'vue-axios';
 import VueRouter from 'vue-router';
 import axios from 'axios';
 import { routes } from './routes';
+window.api_base_path = "http://localhost:8000";
 
 
 /**

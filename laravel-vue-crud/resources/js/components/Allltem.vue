@@ -1,6 +1,11 @@
 <template>
     <div>
-        <h2 class="text-center">Item List</h2>
+        <div>
+            <h2 class="text-center">Item List</h2>
+            <h4>
+                <router-link to="/items/create" class="nav-item nav-link">Create Item</router-link>
+            </h4>
+        </div>
         <table class="table">
             <thead>
             <tr>
@@ -19,7 +24,7 @@
                 <td>{{ item.price }}</td>
                 <td>
                     <div class="btn-group" role="group">
-                        <router-link :to="{name: 'edit', params: { id: item.id }}" class="btn btn-success">Edit
+                        <router-link :to="{name: 'edit/items', params: { id: item.id }}" class="btn btn-success">Edit
                         </router-link>
                         <button class="btn btn-danger" @click="deleteItem(item.id)">Delete</button>
                     </div>
@@ -50,7 +55,7 @@
             deleteItem(id, index) {
                 if (confirm('are you sure?')) {
                     this.axios
-                        .delete(`http://localhost:8000/api/items/${id}`)
+                        .delete(`${api_base_path}/api/items/${id}`)
                         .then(response => {
                             let i = this.items.map(data => data.id).indexOf(id);
                             this.items.splice(i, 1)

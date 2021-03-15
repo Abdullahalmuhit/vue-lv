@@ -1,7 +1,12 @@
 <template>
     <div>
-        <h2 class="text-center">Products List</h2>
+        <div>
 
+            <h2 class="text-center">Products List</h2>
+            <h4>
+                <router-link to="/create" class="nav-item nav-link">Create Product</router-link>
+            </h4>
+        </div>
         <table class="table">
             <thead>
             <tr>
