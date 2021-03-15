@@ -8,7 +8,7 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Detail</th>
-                 <th>Actions</th>
+                <th>Actions</th>
             </tr>
             </thead>
             <tbody>

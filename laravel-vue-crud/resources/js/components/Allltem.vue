@@ -1,7 +1,6 @@
 <template>
     <div>
         <h2 class="text-center">Item List</h2>
-
         <table class="table">
             <thead>
             <tr>
@@ -13,10 +12,11 @@
             </tr>
             </thead>
             <tbody>
-            <tr v-for="item in itemList" :key="item.id">
+            <tr v-for="item in items" :key="item.id">
                 <td>{{ item.id }}</td>
                 <td>{{ item.name }}</td>
                 <td>{{ item.details }}</td>
+                <td>{{ item.price }}</td>
                 <td>
                     <div class="btn-group" role="group">
                         <router-link :to="{name: 'edit', params: { id: item.id }}" class="btn btn-success">Edit
@@ -24,11 +24,9 @@
                         <button class="btn btn-danger" @click="deleteItem(item.id)">Delete</button>
                     </div>
                 </td>
-
             </tr>
             </tbody>
         </table>
-
     </div>
 </template>
 
@@ -36,7 +34,7 @@
     export default {
         data() {
             return {
-                itemList: [],
+                items: [],
                 laravelData: {},
             }
         },
@@ -44,7 +42,7 @@
             this.axios
                 .get('http://localhost:8000/api/items/')
                 .then(response => {
-                    this.products = response.data;
+                    this.items = response.data;
                 });
         },
 
@@ -54,8 +52,8 @@
                     this.axios
                         .delete(`http://localhost:8000/api/items/${id}`)
                         .then(response => {
-                            let i = this.itemList.map(data => data.id).indexOf(id);
-                            this.itemList.splice(i, 1)
+                            let i = this.items.map(data => data.id).indexOf(id);
+                            this.items.splice(i, 1)
                         });
                 }
             }

@@ -13,6 +13,7 @@ import VueRouter from 'vue-router';
 import axios from 'axios';
 import { routes } from './routes';
 
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -32,3 +33,4 @@ const app = new Vue({
     router: router,
     render: h => h(App),
 });
+

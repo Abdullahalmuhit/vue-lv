@@ -2062,12 +2062,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      itemList: [],
+      items: [],
       laravelData: {}
     };
   },
@@ -2075,7 +2073,7 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     this.axios.get('http://localhost:8000/api/items/').then(function (response) {
-      _this.products = response.data;
+      _this.items = response.data;
     });
   },
   methods: {
@@ -2084,11 +2082,11 @@ __webpack_require__.r(__webpack_exports__);
 
       if (confirm('are you sure?')) {
         this.axios["delete"]("http://localhost:8000/api/items/".concat(id)).then(function (response) {
-          var i = _this2.itemList.map(function (data) {
+          var i = _this2.items.map(function (data) {
             return data.id;
           }).indexOf(id);
 
-          _this2.itemList.splice(i, 1);
+          _this2.items.splice(i, 1);
         });
       }
     }
@@ -38016,13 +38014,15 @@ var render = function() {
       _vm._v(" "),
       _c(
         "tbody",
-        _vm._l(_vm.itemList, function(item) {
+        _vm._l(_vm.items, function(item) {
           return _c("tr", { key: item.id }, [
             _c("td", [_vm._v(_vm._s(item.id))]),
             _vm._v(" "),
             _c("td", [_vm._v(_vm._s(item.name))]),
             _vm._v(" "),
             _c("td", [_vm._v(_vm._s(item.details))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(item.price))]),
             _vm._v(" "),
             _c("td", [
               _c(
@@ -38133,7 +38133,7 @@ var render = function() {
                 _c(
                   "router-link",
                   { staticClass: "nav-item nav-link", attrs: { to: "/items" } },
-                  [_vm._v("Create Items")]
+                  [_vm._v("Items List")]
                 )
               ],
               1
